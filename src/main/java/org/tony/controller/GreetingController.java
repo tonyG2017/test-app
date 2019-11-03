@@ -16,9 +16,15 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class GreetingController {
 
     private final AtomicLong counter = new AtomicLong();
-    @Autowired
-    private  TestAppConfiguration testAppConfiguration;
+    //@Autowired
+    //private  TestAppConfiguration testAppConfiguration;
     //Not work when adding final //private final TestAppConfiguration testAppConfiguration;
+    //If you want to use final,  you have to use  CONSTRUCTOR injection
+    private final TestAppConfiguration testAppConfiguration;
+    @Autowired
+    public GreetingController(TestAppConfiguration testAppConfiguration){
+        this.testAppConfiguration = testAppConfiguration;
+    }
 
     @RequestMapping(value = "/greeting", method = GET )  //If we ignore method, all of the methods, i.e., GET/POST/DELETE show in the swagger ui.
     public Greeting greeting(@RequestParam(value="name") Optional<String> name) {
