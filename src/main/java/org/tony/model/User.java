@@ -1,6 +1,7 @@
 package org.tony.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,6 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Builder
 public class User {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int id;
