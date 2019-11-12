@@ -3,6 +3,7 @@ package org.tony.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.tony.exceptions.UserNotFoundException;
 import org.tony.model.User;
 import org.tony.service.UserService;
 
@@ -26,7 +27,10 @@ public class UserController {
     //https://www.baeldung.com/spring-requestmapping
     @GetMapping(value = "/{id:\\d{1,5}}")
     public User getUserById(@PathVariable int id){
-        return  userService.getUserById(id);
+        User user = userService.getUserById(id);
+        if ( user == null)
+            throw new UserNotFoundException();
+        return  user;
     }
 
     //https://www.baeldung.com/building-a-restful-web-service-with-spring-and-java-based-configuration
