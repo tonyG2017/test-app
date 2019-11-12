@@ -13,7 +13,7 @@ spring:
       time-to-live: 1800s
   redis:
     database: 0
-    host: slc09ybf.us.oracle.com
+    host: 127.0.0.1
     port: 6379
     password: welcome1
     jedis:
