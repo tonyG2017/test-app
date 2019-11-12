@@ -2,6 +2,7 @@ package org.tony;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @SpringBootApplication
 @EnableSwagger2
+@EnableCaching
 //https://www.tutorialspoint.com/spring_boot/spring_boot_enabling_swagger2.htm
 public class TestApp {
     public static void main(String[] args) {
