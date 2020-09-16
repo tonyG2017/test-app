@@ -32,4 +32,9 @@ public interface UserMapper {
     @Update("UPDATE people set salary=#{salary} WHERE id=#{id}")
     int updateSalary( long id, int salary);
 
+    @Update("UPDATE people set" +
+            " salary=#{salary} ,version=version+1" +
+            " WHERE id=#{id} and version=#{version}")
+    int updateSalaryWithVersion( User user);
+
 }
