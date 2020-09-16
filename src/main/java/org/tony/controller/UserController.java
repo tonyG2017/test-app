@@ -65,4 +65,18 @@ public class UserController {
         }
     }
 
+    @PutMapping(value = "/{id}/salaryIncreaseWithOptimisticLock")
+    public void updateSalaryByIdWithOptimisticLock(@PathVariable( "id" ) int id, @RequestBody int salaryIncrease){
+        System.out.println("*****salaryIncrease with Optimistic lock:"+salaryIncrease);
+//        boolean stop=false;
+//        while (!stop){
+//            try {
+                userService.updateSalaryByIdWithOptimisticLock(id,salaryIncrease);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+    }
+
 }
