@@ -5,7 +5,7 @@ spring:
   datasource:
     url: "jdbc:mysql://localhost:3306/dw_people?useUnicode=true&characterEncoding=utf8&autoReconnect=true"
     username: studio
-    password: welcome
+    password: welcome1
     driver-class-name: com.mysql.jdbc.Driver
   cache:
     #cache-names: c1,c2

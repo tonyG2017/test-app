@@ -13,6 +13,9 @@ public interface UserMapper {
     @Select("SELECT * FROM people WHERE id=#{id}")
     User getUserById(int id);
 
+    @Select("SELECT * FROM people WHERE id=#{id} for update")
+    User getUserByIdForUpdate(int id);
+
     @Insert("INSERT INTO people(fullName, jobTitle, password) VALUES (#{fullName}, #{jobTitle}, #{password})")
     @Options(useGeneratedKeys=true, keyProperty="id")
     //https://www.cnblogs.com/Weagle/p/5354357.html
@@ -25,4 +28,8 @@ public interface UserMapper {
 
     @Update("UPDATE people set fullName=#{fullName}, jobTitle=#{jobTitle}, password=#{password} WHERE id=#{id}")
     int updateUserById(User user);
+
+    @Update("UPDATE people set salary=#{salary} WHERE id=#{id}")
+    int updateSalary( long id, int salary);
+
 }

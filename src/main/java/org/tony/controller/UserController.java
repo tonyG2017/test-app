@@ -53,4 +53,16 @@ public class UserController {
         System.out.println("*****user after:"+user);
         userService.updateUserById(user);
     }
+
+    @PutMapping(value = "/{id}/salaryIncrease")
+    public void updateSalaryById(@PathVariable( "id" ) int id, @RequestBody int salaryIncrease){
+        System.out.println("*****salaryIncrease:"+salaryIncrease);
+
+        try {
+            userService.updateSalaryById(id,salaryIncrease);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

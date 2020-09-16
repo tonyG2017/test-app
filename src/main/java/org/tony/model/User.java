@@ -20,4 +20,7 @@ public class User implements Serializable {
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //    Use this annotation to hide the password in serialization
     private String password;
+
+    private int salary;
+    private int version;
 }
