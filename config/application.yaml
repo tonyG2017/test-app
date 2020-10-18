@@ -33,9 +33,14 @@ spring:
       auto-commit-interval: 1000
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  elasticsearch:
+    rest:
+      uri:
+        "127.0.0.1:9200"
 es:
   host: "127.0.0.1"
   port: "9200"
+
 logging:
   level:
     org.springframework.web: DEBUG
